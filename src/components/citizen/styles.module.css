@@ -1,0 +1,18 @@
+.formContainer {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.fileUpload {
+  border: 2px dashed #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fileUpload:hover {
+  background-color: #f9fafb;
+}
