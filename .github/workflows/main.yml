@@ -1,0 +1,26 @@
+name: Unzip File in Repository
+
+on:
+  workflow_dispatch:
+    # מאפשר הפעלה ידנית של ה-Workflow
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Unzip file
+      run: |
+        sudo apt-get install -y unzip
+        unzip New.zip -d .
+      
+    - name: Commit changes
+      run: |
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
+        git add .
+        git commit -m "Unzipped New.zip"
+        git push
